@@ -10,16 +10,10 @@ st.set_page_config(
      }
 )
 
-st.title("GapMinder")
+st.title("About")
 
-mkd = """
-This is the comment
-"""
-st.markdown(mkd)
 c1, c2, c3 = st.columns([1,2,1])
-c2.video("https://www.youtube.com/watch?v=hVimVzgtD6w")
-
 mkd = """
 This is the comment
 """
-st.markdown(mkd)
+c2.markdown(mkd)
