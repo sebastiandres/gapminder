@@ -19,13 +19,13 @@ st.write("Snowflake had a little lamb")
 # Create Session object
 def create_session_object():
     connection_parameters = {
-      "account": st.secrets["connections"]["snowpark"]["account"],
-      "user": st.secrets["connections"]["snowpark"]["user"],
-      "password": st.secrets["connections"]["snowpark"]["password"],
-      "role": st.secrets["connections"]["snowpark"]["role"],
-      "warehouse": st.secrets["connections"]["snowpark"]["warehouse"],
-      "database": st.secrets["connections"]["snowpark"]["database"],
-      "schema": st.secrets["connections"]["snowpark"]["schema"],
+      "account": st.secrets.connections.snowpark["account"],
+      "user": st.secrets.connections.snowpark["user"],
+      "password": st.secrets.connections.snowpark["password"],
+      "role": st.secrets.connections.snowpark["role"],
+      "warehouse": st.secrets.connections.snowpark["warehouse"],
+      "database": st.secrets.connections.snowpark["database"],
+      "schema": st.secrets.connections.snowpark["schema"],
     }
     session = Session.builder.configs(connection_parameters).create()
     #print(session.sql('select current_warehouse(), current_database(), current_schema()').collect())
