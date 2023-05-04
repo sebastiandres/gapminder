@@ -3,3 +3,4 @@ snowflake-snowpark-python[pandas]
 ipyvizzu
 ipyvizzu-story
 streamlit-extras
+iso3166
