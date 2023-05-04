@@ -1,2 +1,5 @@
 streamlit
 snowflake-snowpark-python[pandas]
+ipyvizzu
+ipyvizzu-story
+streamlit-extras
