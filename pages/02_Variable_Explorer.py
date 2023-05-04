@@ -33,11 +33,47 @@ def create_session_object():
   
 # Create Snowpark DataFrames that loads data from Knoema: Environmental Data Atlas
 def load_data(session):
-    snow_data = session.table("MYTABLE")
+    #snow_data = session.table("GEO_INDEX")
+    snow_data = session.sql("""
+    SELECT 
+        variable_name, 
+        geo_name, 
+        geo_id, 
+        date,
+        value 
+    FROM cybersyn.timeseries 
+    JOIN cybersyn.geo_index 
+    ON timeseries.geo_id = geo_index.id
+    WHERE 
+        variable ='Count_Person' 
+        AND timeseries.geo_id IN ('country/USA', 'country/CAN', 'country/MEX') 
+        AND date >= '2000-01-01'
+    ORDER BY date desc;
+    """)
     df_data = snow_data.to_pandas()
     st.write(df_data)        
+
+def load_table(session, table, nrows=10):
+    """
+    Using the session, queries the first nrows rows
+    """
+    query = """
+    SELECT 
+        *
+    FROM 
+        {table} 
+    LIMIT
+        {nrows}
+    """.format(table=table, nrows=nrows)
+    snow_data = session.sql(query)
+    df_data = snow_data.to_pandas()
+    st.write(df_data)        
+
 
 if __name__ == "__main__":
     session = create_session_object()
     #st.write(session)
-    load_data(session)
+    #load_data(session)
+    table_options = ["geo_index", "measures", "public_holidays", "timeseries", "variable_summary", "geo_hierarchy"]
+    table_sel = st.selectbox("Select the table", table_options)
+    load_table(session, table_sel)
