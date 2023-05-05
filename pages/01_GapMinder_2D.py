@@ -1,15 +1,9 @@
 # Snowpark
-from snowflake.snowpark.session import Session
-from snowflake.snowpark.functions import avg, sum, col,lit
 import streamlit as st
 import pandas as pd
-from ipyvizzu import Data, Config, Style, Chart, DisplayTarget
-from streamlit.components.v1 import html
-import ssl
-ssl._create_default_https_context = ssl._create_unverified_context
 
-from helpers.data_helpers import set_page_config, eval_sql, create_session_object, variable_name_options
-from helpers.vizzu_helpers import st_vizzu, bubble_chart_config
+from helpers.data_helpers import set_page_config, eval_sql, variable_name_options
+from helpers.vizzu_helpers import st_vizzu, gapminder_2d_config
 
 set_page_config()
 
@@ -76,13 +70,13 @@ else:
     c1, c2 = st.columns(2)
     year_min = min(year_list)
     year_max = max(year_list)
-    year_min_sel, year_max_sel = c1.slider("Year", year_min, year_max, (year_min, year_max))
+    year_min_sel, year_max_sel = c1.slider("Year range", year_min, year_max, (year_min, year_max))
     year_list_sel = [y for y in year_list if y >= year_min_sel and y <= year_max_sel]
     xmax = df_data[x_axis_sel].max()*1.2
     ymax = df_data[y_axis_sel].max()*1.2
     smax = df_data[bubble_size_sel].max()*1.2
     #if st.button("Create Animation"):
-    data, frame_list = bubble_chart_config(df_data, year_list_sel, x_axis_sel, y_axis_sel, bubble_size_sel, bubble_color_sel, 
+    data, frame_list = gapminder_2d_config(df_data, year_list_sel, x_axis_sel, y_axis_sel, bubble_size_sel, bubble_color_sel, 
                                            xmax=xmax, ymax=ymax, smax=smax)
     # Render the chart
     st_vizzu(data, frame_list, c2)

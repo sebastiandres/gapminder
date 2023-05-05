@@ -75,7 +75,7 @@ def st_vizzu(data, frame_list, col=None, height=800):
 
 
 @st.cache_data
-def bubble_chart_config(df_data, year_list, 
+def gapminder_2d_config(df_data, year_list, 
                         x_axis_sel, y_axis_sel, 
                         bubble_size_sel, bubble_color_sel,
                         xmin = 0, xmax = "auto",
@@ -120,6 +120,86 @@ def bubble_chart_config(df_data, year_list,
                             "title": f"Year {year}",
                             "size": bubble_size_sel,
                             "geometry": "circle",
+                        }
+                    ),
+                )
+        frame_list.append(frame)
+    return data, frame_list
+
+if __name__=="__main__":
+    data_frame = pd.read_csv("data/titanic.csv")
+    frames = [
+                (
+                    Config(
+                        {
+                            "x": "Count",
+                            "y": "Sex",
+                            "label": "Count",
+                            "title": "Passengers of the Titanic",
+                        }
+                    ),
+                ),
+                (
+                    Config(
+                        {
+                            "x": ["Count", "Survived"],
+                            "label": ["Count", "Survived"],
+                            "color": "Survived",
+                        }
+                    ), 
+                ),
+                (
+                    Config({"x": "Count", "y": ["Sex", "Survived"]}),
+                )
+    ]
+    _, col, _ = st.columns([1,4,1])
+    st_vizzu(data_frame, frames, col, height=600)
+
+
+@st.cache_data
+def gapminder_1d_config(df_data, year_list, 
+                        x_axis_sel, color_sel,
+                        xmin = 0, xmax = "auto",
+                        ):
+    """
+    Creates the data and the frame_list to be ready to pass to the vizzu chart.
+    """
+    # Data to be used
+    data = Data()
+    data.add_data_frame(df_data)
+    # Frames to use in vizzu
+    frame_list = []
+    # Initial configuration
+    frame = (   Style(
+                    {"legend": {"width": 0}}
+                ),
+                Config(
+                    {
+                        "channels": {
+                            "x": { "range": {"min": xmin, "max": xmax} },
+                            "label": "Country",
+                            "color": "Country",
+                        },
+                        "title": f"Yearly evolution",
+                    }
+                ),
+            )
+    frame_list.append(frame)
+    # Data
+    for year in year_list:
+        # add config to Chart
+        frame = (
+                    data.filter(
+                        f'record["YEAR"] == "{year}"'
+                    ),
+                    Config(
+                        {
+                            "x": x_axis_sel,
+                            "y": "Country",
+                            "title": f"Year {year}",
+                            "channels": {
+                                "label": x_axis_sel,
+                            },
                         }
                     ),
                 )
