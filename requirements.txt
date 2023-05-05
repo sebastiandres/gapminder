@@ -4,3 +4,4 @@ ipyvizzu
 ipyvizzu-story
 streamlit-extras
 iso3166
+openpyxl

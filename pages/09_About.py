@@ -1,6 +1,7 @@
 import streamlit as st
 from streamlit_extras.mention import mention
-from helpers.helpers import set_page_config
+
+from helpers.other_helpers import set_page_config
 
 set_page_config("YAG - About")
 

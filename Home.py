@@ -1,6 +1,6 @@
 import streamlit as st
 
-from helpers.helpers import set_page_config
+from helpers.other_helpers import set_page_config
 
 set_page_config()
 
@@ -35,10 +35,8 @@ When I first saw this Ted Talk, I was amazed by two things:
 * First, the content: world is getting better, and there are some very interesting correlations to learn. 
 * Second, the plots and animations! You could do storytelling with data, and create huge impact! 
 
-I wanted to learn how to create that kind of awe through technical abilities.
-
 Doing those animations was probably a huge effort +15 years ago. 
-I can easily imagine a team of 3 persons working a couple of months, scrapping the data, coding their way, and making the plots.
+I can easily imagine a team of 3 persons working a couple of months, scrapping the data, coding their way, and making the plots and animations.
 
 Fast forward 2023, and you can do all that WITH FREE RESOURCES in A COUPLE OF DAYS OF CODING after work (my case).
 If that's not a strong statement of how technology makes us more productive, I don't know what will ever be.

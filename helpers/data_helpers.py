@@ -1,6 +1,7 @@
 import streamlit as st
 from snowflake.snowpark.session import Session
 import iso3166
+import pandas as pd
 
 variable_name_options = [
 "Fertility Rate",
@@ -38,36 +39,6 @@ variable_name_options = [
 "Amount of Economic Activity (Nominal): Gross Domestic Production (Per Capita), Purchasing Power Standard",
 "Count of Mortality Event (Age Adjusted) (Per Capita)",
 ]    
-
-variable_options = [
-"FertilityRate_Person_Female",
-"LifeExpectancy_Person",
-"Count_Person",
-"Amount_Debt_Government",
-"Amount_Debt_Government_AsAFractionOfGrossDomesticProduction",
-"Amount_EconomicActivity_GrossDomesticProduction_Nominal",
-"Amount_EconomicActivity_GrossNationalIncome_PurchasingPowerParity",
-"Amount_Remittance_InwardRemittance_AsFractionOf_Amount_EconomicActivity_GrossDomesticProduction_Nominal",
-"Amount_Remittance_OutwardRemittance",
-"Annual_Consumption_Electricity",
-"Count_Death_AsAFractionOfCount_Person",
-"Count_MedicalConditionIncident_COVID_19_PatientHospitalized",
-"Count_MedicalConditionIncident_COVID_19_PatientInICU",
-"Count_Person_25To34Years",
-"Count_Person_35To44Years",
-"Count_Person_45To54Years",
-"Count_Person_55To64Years",
-"Count_Person_65OrMoreYears",
-"Count_Person_Female",
-"Count_Person_Male",
-"CumulativeCount_MedicalConditionIncident_COVID_19_ConfirmedCase",
-"CumulativeCount_Vaccine_COVID_19_Administered",
-"GiniIndex_EconomicActivity",
-"IncrementalCount_Vaccine_COVID_19_Administered",
-"PrecipitationRate",
-"PrecipitationRate_RCP85",
-"UnemploymentRate_Person",  
-]
 
 def set_page_config(page_title="GapMinder App", page_icon=":globe_with_meridians:"):
     st.set_page_config(
@@ -118,8 +89,22 @@ def flag_emoji(name):
     except:
         return "?"
 
+def save_country_data():
+    """"
+    This function scrapes the country codes from the website
+    https://cloford.com/resources/codes/index.htm 
+    and saves the third table (the one we're interested on)
+    as an excel file.
+    Based on: https://towardsdatascience.com/how-to-scrape-html-tables-with-python-pandas-98d18d2129cb
+    """
+    df_list = pd.read_html("https://cloford.com/resources/codes/index.htm")
+    df = df_list[3].fillna("")
+    df.to_excel("data/country_codes.xlsx", index=False)
+    return
+
 if __name__ == "__main__":
     print(flag_emoji(name="Chile"))
     print(flag_emoji(name="CL"))
     print(flag_emoji(name="CHL"))
     print(flag_emoji(name='152'))
+    save_country_data()

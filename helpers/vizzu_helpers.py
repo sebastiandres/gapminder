@@ -92,8 +92,9 @@ def bubble_chart_config(df_data, year_list, x_axis_sel, y_axis_sel, bubble_size_
                         "channels": {
                             "x": { "range": {"min": xmin, "max": xmax},  },
                             "y": { "range": {"min": ymin, "max": ymax} },
-                            "color": "GEO_ID",
-                            #"label": "GEO_ID",
+                            "color": "Region",
+                            #"color": "Country",
+                            "label": "Country",
                         },
                         "geometry": "circle",
                         "title": f"Yearly evolution",
@@ -124,9 +125,7 @@ def bubble_chart_config(df_data, year_list, x_axis_sel, y_axis_sel, bubble_size_
     return data, frame_list
 
 if __name__=="__main__":
-    data_frame = pd.read_csv(
-        "https://ipyvizzu.vizzuhq.com/0.15/showcases/titanic/titanic.csv"
-    )
+    data_frame = pd.read_csv("data/titanic.csv")
     frames = [
                 (
                     Config(
@@ -151,5 +150,5 @@ if __name__=="__main__":
                     Config({"x": "Count", "y": ["Sex", "Survived"]}),
                 )
     ]
-
-    st_vizzu(data_frame, frames, width=650, height=370)
+    _, col, _ = st.columns([1,4,1])
+    st_vizzu(data_frame, frames, col, height=600)
