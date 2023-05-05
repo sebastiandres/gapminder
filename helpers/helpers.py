@@ -80,7 +80,7 @@ def set_page_config(page_title="GapMinder App", page_icon=":globe_with_meridians
         }
     )    
 
-@st.cache_data
+@st.cache_resource
 def create_session_object():
     connection_parameters = {
       "account": st.secrets.connections.snowpark["account"],
