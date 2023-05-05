@@ -1,37 +1,16 @@
-from streamlit.components.v1 import html
+
 import ssl
-import streamlit as st 
-from ipyvizzu import Data, Config, Style, Chart, DisplayTarget
-from ipyvizzustory import Story, Slide, Step
 import pandas as pd
+import streamlit as st 
+from streamlit.components.v1 import html
+
+from ipyvizzustory import Story, Slide, Step
+from ipyvizzu import Data, Config, Style, Chart, DisplayTarget
 
 ssl._create_default_https_context = ssl._create_unverified_context
 
-def vizzu_story(data, frame_list):
-    """
-    Creates a vizzu chart with stories using the frames elements.
-    data_frame: a pandas dataframe.
-    frame_list: a list of tuples, where the tuple contains
-    at least one element of Data, Config or Style.
-    width: width of the chart.
-    height: height of the chart.
-    """
-    # Setup data
-    if isinstance(data, pd.DataFrame):
-        new_data = Data()
-        new_data.add_data_frame(data)
-        data = new_data
-    # Config
-    story = Story(data=data)
-    for frame in frame_list:
-        slide = Slide(Step(*frame))
-        story.add_slide(slide)        
-    # Add tooltip
-    story.set_feature('tooltip', True)
-    return story._repr_html_()
 
-
-def vizzu_animation(data, frame_list):
+def vizzu_animation(data, frame_list, height):
     """
     Creates a vizzu chart with animation using the frames elements.
     data_frame: a pandas dataframe.
@@ -52,7 +31,31 @@ def vizzu_animation(data, frame_list):
     # add animation frames
     for frame in frame_list:
         chart.animate(*frame)
-    return chart._repr_html_()
+    return html(chart._repr_html_(), height=height)
+
+
+def vizzu_story(data, frame_list, height):
+    """
+    Creates a vizzu chart with stories using the frames elements.
+    data_frame: a pandas dataframe.
+    frame_list: a list of tuples, where the tuple contains
+    at least one element of Data, Config or Style.
+    width: width of the chart.
+    height: height of the chart.
+    """
+    # Setup data
+    if isinstance(data, pd.DataFrame):
+        new_data = Data()
+        new_data.add_data_frame(data)
+        data = new_data
+    # Config
+    story = Story(data=data)
+    for frame in frame_list:
+        slide = Slide(Step(*frame))
+        story.add_slide(slide)        
+    # Add tooltip
+    story.set_feature('tooltip', True)
+    return html(story._repr_html_(), height=height)
 
 
 def st_vizzu(data, frame_list, col=None, height=800):
@@ -66,11 +69,10 @@ def st_vizzu(data, frame_list, col=None, height=800):
     """
     _, c1, c2, _ = col.columns([1,2,2,1])
     if c1.button("Animation", type='primary'):
-        html(vizzu_animation(data, frame_list), height=height)
+        vizzu_animation(data, frame_list, height)
     if c2.button("Slide by Slide", type='primary'):
-        html(vizzu_story(data, frame_list), height=height)
         st.caption("Use the arrows on the tooltip to navigate through the story.")
-    #else:
+        vizzu_story(data, frame_list, height)
     return
 
 
@@ -126,35 +128,6 @@ def gapminder_2d_config(df_data, year_list,
         frame_list.append(frame)
     return data, frame_list
 
-if __name__=="__main__":
-    data_frame = pd.read_csv("data/titanic.csv")
-    frames = [
-                (
-                    Config(
-                        {
-                            "x": "Count",
-                            "y": "Sex",
-                            "label": "Count",
-                            "title": "Passengers of the Titanic",
-                        }
-                    ),
-                ),
-                (
-                    Config(
-                        {
-                            "x": ["Count", "Survived"],
-                            "label": ["Count", "Survived"],
-                            "color": "Survived",
-                        }
-                    ), 
-                ),
-                (
-                    Config({"x": "Count", "y": ["Sex", "Survived"]}),
-                )
-    ]
-    _, col, _ = st.columns([1,4,1])
-    st_vizzu(data_frame, frames, col, height=600)
-
 
 @st.cache_data
 def gapminder_1d_config(df_data, year_list, 
@@ -171,7 +144,7 @@ def gapminder_1d_config(df_data, year_list,
     frame_list = []
     # Initial configuration
     frame = (   Style(
-                    {"legend": {"width": 0}}
+                    {"legend": {"width": 0}, "fontSize": "0.75em"}
                 ),
                 Config(
                     {

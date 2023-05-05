@@ -37,9 +37,10 @@ df_sql["ISO3"] = df_sql["GEO_ID"].str.split("/").str[1]
 df_country = pd.read_excel("data/country_codes.xlsx", dtype="str")
 df = df_sql.merge(df_country, how="inner", left_on="ISO3", right_on="ISO (3)")
 
-default_values = ["United States", "Chile", "France", "China", "Mexico", "India", "Japan", "Germany", "United Kingdom"]
+default_values = ["United States", "Chile", "France", "China", "Mexico", "India", "Japan", "Germany"]
 country_options = df['Country'].unique().tolist()
-country_sel = st.multiselect("Countries", country_options, default=default_values)
+filtered_default_values = [x for x in default_values if x in country_options]
+country_sel = st.multiselect("Countries", country_options, default=filtered_default_values)
 
 # Subselect the data based on the selected countries
 df_sel = df[df['Country'].isin(country_sel)]
@@ -62,7 +63,6 @@ year_list = sorted(list(years))
 # Now we have to pivot the table to have the variables as columns!
 df_data_aux = df_sel_avg[df_sel_avg['YEAR'].isin(year_list)]
 df_data = df_data_aux.pivot(index=['Country', 'Region', 'Continent', 'YEAR'], columns='VARIABLE_NAME', values='VALUE').reset_index()
-#st.write(df_data)
 
 if len(year_list) == 0:
     st.write("No common years between the selected countries")
@@ -78,25 +78,25 @@ else:
     #if st.button("Create Animation"):
     data, frame_list = gapminder_2d_config(df_data, year_list_sel, x_axis_sel, y_axis_sel, bubble_size_sel, bubble_color_sel, 
                                            xmax=xmax, ymax=ymax, smax=smax)
+
+    # Some Help and info
+    with st.expander("Help"):
+        mkd = """
+        Simply clicking on the "Animation" or "Slide by Slide" buttons to create the corresponding animation. 
+        You can change all the properties, and create a different plot.
+
+        Another combinations you might want to try:
+        **Are there any correlations between fertility rate and population?**
+        * X-Axis: "Fertility Rate"
+        * Y-Axis: "Population"
+        * Bubble size: "Amount of Economic Activity (Nominal): Gross Domestic Production"
+
+        **Are there any correlations between mortality and precipitation?**
+        * X-Axis: "Precipitation Rate"
+        * Y-Axis: "Count of Mortality Event (Per Capita)"
+        * Bubble size: "Population"
+        """
+        st.markdown(mkd)
+
     # Render the chart
     st_vizzu(data, frame_list, c2)
-
-
-# Some Help and info
-with st.expander("Help"):
-    mkd = """
-    Simply clicking on the "Animation" or "Slide by Slide" buttons to create the corresponding animation. 
-    You can change all the properties, and create a different plot.
-
-    Another combinations you might want to try:
-    **Time evolution of fertility and life expectancy**
-    * X-Axis: "Amount of Economic Activity (Nominal): Gross Domestic Production (Per Capita), EUR"
-    * Y-Axis: "Count of Mortality Event (Per Capita)"
-    * Bubble size: "Population: 65 Years or More"
-
-    **Time evolution of fertility and life expectancy**
-    * X-Axis: 
-    * Y-Axis:
-    * Bubble size:      
-    """
-    st.markdown(mkd)

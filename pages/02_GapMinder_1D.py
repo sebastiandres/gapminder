@@ -31,9 +31,10 @@ df_sql["ISO3"] = df_sql["GEO_ID"].str.split("/").str[1]
 df_country = pd.read_excel("data/country_codes.xlsx", dtype="str")
 df = df_sql.merge(df_country, how="inner", left_on="ISO3", right_on="ISO (3)")
 
-default_values = ["United States", "Chile", "France", "China", "Mexico", "India", "Japan", "Germany", "United Kingdom"]
+default_values = ["United States", "Chile", "France", "China", "Mexico", "India", "Japan", "Germany"]
 country_options = df['Country'].unique().tolist()
-country_sel = st.multiselect("Countries", country_options, default=default_values)
+filtered_default_values = [x for x in default_values if x in country_options]
+country_sel = st.multiselect("Countries", country_options, default=filtered_default_values)
 
 # Subselect the data based on the selected countries
 df_sel = df[df['Country'].isin(country_sel)]
@@ -67,25 +68,23 @@ else:
     xmax = df_data[x_axis_sel].max()*1.2
     data, frame_list = gapminder_1d_config(df_data, year_list_sel, x_axis_sel, color_sel, 
                                            xmax=xmax)
+    # Some Help and info
+    with st.expander("Help"):
+        mkd = """
+        Simply clicking on the "Animation" or "Slide by Slide" buttons to create the corresponding animation. 
+        You can change all the properties, and create a different plot.
+
+        Another combinations you might want to try:
+        **Who's using my electricity?**
+        * X-Axis: "Annual Consumption of Electricity"
+
+        **Is mortality reducing?**
+        * X-Axis: "Count of Mortality Event (Per Capita)"
+        """
+        st.markdown(mkd)
+
+
     # Render the chart
     st_vizzu(data, frame_list, c2)
 
 
-# Some Help and info
-with st.expander("Help"):
-    mkd = """
-    Simply clicking on the "Animation" or "Slide by Slide" buttons to create the corresponding animation. 
-    You can change all the properties, and create a different plot.
-
-    Another combinations you might want to try:
-    **Time evolution of fertility and life expectancy**
-    * X-Axis: "Amount of Economic Activity (Nominal): Gross Domestic Production (Per Capita), EUR"
-    * Y-Axis: "Count of Mortality Event (Per Capita)"
-    * Bubble size: "Population: 65 Years or More"
-
-    **Time evolution of fertility and life expectancy**
-    * X-Axis: 
-    * Y-Axis:
-    * Bubble size:      
-    """
-    st.markdown(mkd)
