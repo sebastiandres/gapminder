@@ -38,6 +38,7 @@ variable_name_options = [
 "Amount of Economic Activity (Nominal): Gross Domestic Production (Per Capita), Purchasing Power Standard",
 "Count of Mortality Event (Age Adjusted) (Per Capita)",
 ]    
+
 variable_options = [
 "FertilityRate_Person_Female",
 "LifeExpectancy_Person",
