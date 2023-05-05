@@ -21,10 +21,12 @@ x_axis_options = variable_name_options.copy()
 x_axis_sel = c1.selectbox("X-Axis", x_axis_options)
 y_axis_options = x_axis_options.copy()
 y_axis_options.remove(x_axis_sel)
-y_axis_sel = c1.selectbox("Y-Axis", y_axis_options)
-bubble_options = y_axis_options.copy()
-bubble_options.remove(y_axis_sel)
-bubble_size_sel = c1.selectbox("Bubble Size", bubble_options)
+y_axis_sel = c2.selectbox("Y-Axis", y_axis_options)
+bubble_size_options = y_axis_options.copy()
+bubble_size_options.remove(y_axis_sel)
+bubble_size_sel = c1.selectbox("Bubble Size", bubble_size_options)
+bubble_color_options = ["Continent", "Region", "Country"]
+bubble_color_sel = c2.selectbox("Bubble Color", bubble_color_options)
 
 # Get the data
 df_sql = eval_sql(f"""
@@ -41,9 +43,9 @@ df_sql["ISO3"] = df_sql["GEO_ID"].str.split("/").str[1]
 df_country = pd.read_excel("data/country_codes.xlsx", dtype="str")
 df = df_sql.merge(df_country, how="inner", left_on="ISO3", right_on="ISO (3)")
 
-default_values = ["United States", "Chile", "France", "China"]
+default_values = ["United States", "Chile", "France", "China", "Mexico", "India", "Japan", "Germany", "United Kingdom"]
 country_options = df['Country'].unique().tolist()
-country_sel = c2.multiselect("Countries", country_options, default=default_values)
+country_sel = st.multiselect("Countries", country_options, default=default_values)
 
 # Subselect the data based on the selected countries
 df_sel = df[df['Country'].isin(country_sel)]
@@ -71,15 +73,17 @@ df_data = df_data_aux.pivot(index=['Country', 'Region', 'Continent', 'YEAR'], co
 if len(year_list) == 0:
     st.write("No common years between the selected countries")
 else:
+    c1, c2 = st.columns(2)
     year_min = min(year_list)
     year_max = max(year_list)
-    year_min_sel, year_max_sel = c2.slider("Year", year_min, year_max, (year_min, year_max))
+    year_min_sel, year_max_sel = c1.slider("Year", year_min, year_max, (year_min, year_max))
     year_list_sel = [y for y in year_list if y >= year_min_sel and y <= year_max_sel]
-
     xmax = df_data[x_axis_sel].max()*1.2
     ymax = df_data[y_axis_sel].max()*1.2
+    smax = df_data[bubble_size_sel].max()*1.2
     #if st.button("Create Animation"):
-    data, frame_list = bubble_chart_config(df_data, year_list_sel, x_axis_sel, y_axis_sel, bubble_size_sel, xmax=xmax, ymax=ymax)
+    data, frame_list = bubble_chart_config(df_data, year_list_sel, x_axis_sel, y_axis_sel, bubble_size_sel, bubble_color_sel, 
+                                           xmax=xmax, ymax=ymax, smax=smax)
     # Render the chart
     st_vizzu(data, frame_list, c2)
 

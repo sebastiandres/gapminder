@@ -75,8 +75,13 @@ def st_vizzu(data, frame_list, col=None, height=800):
 
 
 @st.cache_data
-def bubble_chart_config(df_data, year_list, x_axis_sel, y_axis_sel, bubble_size_sel,
-                        xmin = "auto", xmax = "auto", ymin = "auto", ymax = "auto"):
+def bubble_chart_config(df_data, year_list, 
+                        x_axis_sel, y_axis_sel, 
+                        bubble_size_sel, bubble_color_sel,
+                        xmin = 0, xmax = "auto",
+                        ymin = 0, ymax = "auto",
+                        smin = 0, smax = "auto",
+                        ):
     """
     Creates the data and the frame_list to be ready to pass to the vizzu chart.
     """
@@ -86,17 +91,16 @@ def bubble_chart_config(df_data, year_list, x_axis_sel, y_axis_sel, bubble_size_
     # Frames to use in vizzu
     frame_list = []
     # Initial configuration
-    frame = (
+    frame = (   Style({"legend": {"width": 150}}),
                 Config(
                     {
                         "channels": {
-                            "x": { "range": {"min": xmin, "max": xmax},  },
+                            "x": { "range": {"min": xmin, "max": xmax} },
                             "y": { "range": {"min": ymin, "max": ymax} },
-                            "color": "Region",
-                            #"color": "Country",
+                            "size": { "range": {"min": smin, "max": smax} },
+                            "color": bubble_color_sel,
                             "label": "Country",
                         },
-                        "geometry": "circle",
                         "title": f"Yearly evolution",
                     }
                 ),
@@ -113,11 +117,9 @@ def bubble_chart_config(df_data, year_list, x_axis_sel, y_axis_sel, bubble_size_
                         {
                             "x": x_axis_sel,
                             "y": y_axis_sel,
-                            "channels": {
-                                "size": bubble_size_sel,
-                                #"label": False,
-                            },
                             "title": f"Year {year}",
+                            "size": bubble_size_sel,
+                            "geometry": "circle",
                         }
                     ),
                 )
