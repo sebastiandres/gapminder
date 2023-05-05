@@ -167,7 +167,7 @@ if __name__ == "__main__":
     order by
         count(geo_id) desc
     """)
-    df.to_excel("geo_id_country.xlsx")
+    #df.to_excel("geo_id_country.xlsx")
 
     df = eval_sql(session, 
     """

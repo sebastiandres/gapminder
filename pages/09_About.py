@@ -6,6 +6,7 @@ set_page_config("YAG - About")
 
 st.title("About")
 
+c1, c2 = st.columns([2, 1])
 mkd="""
 <span style='color:grey'>
 If I have <s>SEEN</s> *CODED* further, it is by standing on the shoulders of giants.
@@ -14,8 +15,7 @@ If I have <s>SEEN</s> *CODED* further, it is by standing on the shoulders of gia
 </span>
 <br>
 <br>"""
-st.markdown(mkd, unsafe_allow_html=True)
-
+c1.markdown(mkd, unsafe_allow_html=True)
 mkd = """
 Though I'm really proud of this piece of code, I am I'm humbled by the fact that I would have no idea of how to code it on another language, 
 or without one of the following libraries: streamlit, pandas, ipyvizzu, snowflake. A huge thanks to the teams behind them, the work they do 
@@ -26,17 +26,21 @@ I guess it all boils down to the following conversation I had with my kid:
 >
 > Of course not. You have to think a lot. Define the WHAT, the HOW, the WHY. And copy and paste A LOT of code.
 """
-st.markdown(mkd)
+c1.markdown(mkd)
+c2.image("static/quote_illustration.jpeg")
 
 st.header("About me")
+c1, c2 = st.columns([1, 2])
 tw_mention = mention(label="twitter", icon="twitter", url="https://www.twitter.com/sebastiandres", write=False)
 gh_mention = mention(label="github", icon="github", url="https://github.com/sebastiandres/", write=False)
 li_mention = mention(label="linkedin", icon="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg", 
                      url="https://www.linkedin.com/in/sebastiandres/", write=False)
-hp_mention = mention(label="blog", icon=":globe_with_meridians:", url="https://sebastiandres.xyz/", write=False)
+hp_mention = mention(label="blog", icon="🌐", url="https://sebastiandres.xyz/", write=False)
 mkd = f"""
 My name is Sebastian Flores, but you can find me as sebastiandres on the internet. 
+
 I'm a data scientist and I live in Viña del Mar, Chile. 
+
 While a bit introvert, I'd love to connect with like-minded people, so feel free to reach out to me on any of the following platforms:
 <ul>
 <li> {tw_mention} </li>
@@ -45,8 +49,8 @@ While a bit introvert, I'd love to connect with like-minded people, so feel free
 <li> {hp_mention} </li>
 </ul>
 """
-st.write(mkd, unsafe_allow_html=True)
-
+c2.write(mkd, unsafe_allow_html=True)
+c1.image("static/avatar.jpeg")
 st.header("About the Code")
 mkd = """
 The code is available on GitHub at [https://github.com/sebastiandres/gapminder](https://github.com/sebastiandres/gapminder). 
