@@ -32,6 +32,7 @@ variable_name_options = [
 ]    
 
 def set_page_config(page_title="GapMinder App", page_icon=":globe_with_meridians:"):
+    """Set the page configuration, once for all"""
     st.set_page_config(
         page_title=page_title,
         page_icon=page_icon,
@@ -44,6 +45,9 @@ def set_page_config(page_title="GapMinder App", page_icon=":globe_with_meridians
 
 @st.cache_resource
 def create_session_object():
+    """
+    Connects the old way to Snowflake, using the Snowpark connector.
+    """
     connection_parameters = {
       "account": st.secrets.connections.snowpark["account"],
       "user": st.secrets.connections.snowpark["user"],
@@ -52,13 +56,18 @@ def create_session_object():
       "warehouse": st.secrets.connections.snowpark["warehouse"],
       "database": st.secrets.connections.snowpark["database"],
       "schema": st.secrets.connections.snowpark["schema"],
+      "connect_args": {"client_session_keep_alive": 
+                        st.secrets.connections.snowpark["client_session_keep_alive"]},
     }
     session = Session.builder.configs(connection_parameters).create()
     return session
 
 
 @st.cache_data
-def eval_sql(query):
+def eval_sql_old(query):
+    """
+    Evaluates a query, the old way
+    """
     # Initialize session, if not already done
     if "session" not in st.session_state:
         st.session_state.session = create_session_object()
@@ -67,6 +76,27 @@ def eval_sql(query):
     df_data = snow_data.to_pandas()
     return df_data
 
+
+@st.cache_resource
+def create_connection():
+    """
+    Creates the connection, so simply!
+    """
+    connection = st.experimental_connection('snowpark')
+    return connection
+
+@st.cache_data
+def eval_sql(query):
+    """
+    Evaluates a query, so simple!
+    """
+    # Initialize session, if not already done
+    if "connection" not in st.session_state:
+        st.session_state.connection = create_connection()
+    # Eval the query
+    df_data = st.session_state.connection.query(query, ttl=600)
+    #df_data = snow_data.to_pandas()
+    return df_data
 
 @st.cache_data
 def flag_emoji(name):
@@ -99,3 +129,11 @@ if __name__ == "__main__":
     print(flag_emoji(name="CHL"))
     print(flag_emoji(name='152'))
     save_country_data()
+
+    query = "SELECT * FROM TIMESERIES LIMIT 11"
+    df = eval_sql(query)
+    #st.write(type(df))
+    st.write(df)
+
+    df = eval_sql_old(query)
+    st.write(df)
