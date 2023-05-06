@@ -6,6 +6,7 @@ from helpers.data_helpers import set_page_config, eval_sql
 set_page_config()
 
 st.title("Table Explorer")
+st.caption("Querying the database, directly from Streamlit. Custom queries allowed!")
 
 # Get the column structure for all the tables
 

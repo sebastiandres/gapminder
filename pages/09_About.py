@@ -23,9 +23,9 @@ or without one of the following libraries: streamlit, pandas, ipyvizzu, snowflak
 is amazing and we unfairly take it for granted.
 
 I guess it all boils down to the following conversation I had with my kid:
-> Dad, so programers just do a bit of copy and paste code they google and then it works? 
+> Dad, so programers just google and do a bit of copying and pasting code? 
 >
-> Of course not. You have to think a lot. Define the WHAT, the HOW, the WHY. And copy and paste A LOT of code.
+> Of course not, son. You have to think a lot. Define the WHAT, the HOW, the WHY. And copy and paste A LOT of code.
 """
 c1.markdown(mkd)
 c2.image("static/quote_illustration.jpeg")

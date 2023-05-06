@@ -5,8 +5,7 @@ from math import ceil
 import streamlit as st 
 from streamlit.components.v1 import html
 
-from ipyvizzustory import Story, Slide, Step
-from ipyvizzu import Data, Config, Style, Chart, DisplayTarget
+from ipyvizzu import Data, Config, Style
 
 from helpers.data_helpers import set_page_config, eval_sql
 from helpers.vizzu_helpers import vizzu_story
@@ -16,7 +15,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 set_page_config()
 
 st.title("Available Measures")
-st.caption("This page shows the measures (variables) available in the TIMESERIES table")
+st.caption("Explaining the measures (variables) available for the gapminder 2D and 1D.")
 
 # Get the data
 df_sql = eval_sql(f"""
@@ -61,7 +60,11 @@ data = Data()
 data.add_data_frame(df_sql)
 frame_list = []
 frame = (
-        Style({"legend": {"width": 0}}),
+        Style(
+            {
+                "legend": {"width": 0}
+                }
+        ),
         Config(
         {
             "x": "Number of Countries",

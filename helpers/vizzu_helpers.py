@@ -131,7 +131,7 @@ def gapminder_2d_config(df_data, year_list,
 
 @st.cache_data
 def gapminder_1d_config(df_data, year_list, 
-                        x_axis_sel, color_sel,
+                        x_axis_sel,
                         xmin = 0, xmax = "auto",
                         ):
     """

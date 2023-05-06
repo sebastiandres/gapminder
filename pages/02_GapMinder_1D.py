@@ -8,13 +8,13 @@ from helpers.vizzu_helpers import st_vizzu, gapminder_1d_config
 set_page_config()
 
 st.title("GapMinder 1D")
+st.caption("Plotting time evolution of one variable for multiple countries")
+
 c1, c2 = st.columns(2)
 
 # Provide options
 x_axis_options = variable_name_options.copy()
 x_axis_sel = c1.selectbox("Dimension", x_axis_options)
-color_options = ["Continent", "Region", "Country"]
-color_sel = c2.selectbox("Color", color_options)
 
 # Get the data
 df_sql = eval_sql(f"""
@@ -66,8 +66,7 @@ else:
     year_min_sel, year_max_sel = c1.slider("Year range", year_min, year_max, (year_min, year_max))
     year_list_sel = [y for y in year_list if y >= year_min_sel and y <= year_max_sel]
     xmax = df_data[x_axis_sel].max()*1.2
-    data, frame_list = gapminder_1d_config(df_data, year_list_sel, x_axis_sel, color_sel, 
-                                           xmax=xmax)
+    data, frame_list = gapminder_1d_config(df_data, year_list_sel, x_axis_sel, xmax=xmax)
     # Some Help and info
     with st.expander("Help"):
         mkd = """

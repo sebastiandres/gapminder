@@ -8,6 +8,7 @@ from helpers.vizzu_helpers import st_vizzu, gapminder_2d_config
 set_page_config()
 
 st.title("GapMinder 2D")
+st.caption("Plotting time evolution of 2+1 variables for multiple countries")
 c1, c2 = st.columns(2)
 
 # Provide options

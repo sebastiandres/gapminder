@@ -13,7 +13,7 @@ I created this app to show the powerful combination of snowflake, streamlit and 
 This app allows you to explore world data and create stunning animations on 1D or 2D. 
 The user can select the variables to plot, thanks to the interactivity provided by Streamlit. 
 The data is read in real time from CyberSyn's Data Common (freely available at Snowflake's Marketplace) with SQL queries 
-using the snowflake-streamlit connector and renders smooth animations using Vizzu. It makes use of st.cache_data and the snowflake-snowpark-python connector, among other tricks. 
+using the snowflake-streamlit connector and renders smooth animations using Vizzu. It makes use of st.cache_data, st.cache_resource, and the snowflake-snowpark-python connector, among other tricks. 
 
 Henceforth the conclusion: A complete gapminder emulator using only free resources and simple code! 
 """
@@ -49,6 +49,8 @@ st.header("How to use it")
 mkd = """
 * Use the sidebar to select the page you want to see.
 * On GapMinder 1D or 2D, select the variables and configuration you want to plot.
-* On Variable Explorer, browse through some preconfigured queries, or write your own to explore the data.
+* On SQL Explorer, browse through some preconfigured queries, or write your own query to explore the data.
+* On Available Measures, you can see the list of measures available on the data common dataset (on a tabla and a graph).
+* On About, you can learn more about the app, the data, and the technology behind it.
 """
 st.markdown(mkd)
