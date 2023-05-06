@@ -8,4 +8,4 @@ This app allows you to explore world data and create stunning animations on 1D o
 
 Henceforth the conclusion: A complete gapminder emulator using only free resources and simple code!
 
-![](https://github.com/sebastiandres/gapminder/static/gapminder.gif?raw=true)
+![](https://github.com/sebastiandres/gapminder/blob/main/static/gapminder.gif?raw=true)
