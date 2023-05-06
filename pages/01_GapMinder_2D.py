@@ -65,7 +65,7 @@ year_list = sorted(list(years))
 df_data_aux = df_sel_avg[df_sel_avg['YEAR'].isin(year_list)]
 df_data = df_data_aux.pivot(index=['Country', 'Region', 'Continent', 'YEAR'], columns='VARIABLE_NAME', values='VALUE').reset_index()
 
-if len(year_list) == 0:
+if len(year_list) <= 1:
     st.write("No common years between the selected countries")
 else:
     c1, c2 = st.columns(2)
