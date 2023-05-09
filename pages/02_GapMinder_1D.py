@@ -32,6 +32,10 @@ df_sql["ISO3"] = df_sql["GEO_ID"].str.split("/").str[1]
 df_country = pd.read_excel("data/country_codes.xlsx", dtype="str")
 df = df_sql.merge(df_country, how="inner", left_on="ISO3", right_on="ISO (3)")
 
+with st.expander("Show raw data"):
+    st.write("Data has {} rows and {} columns".format(*df.shape))
+    st.write(df)
+
 default_values = ["United States", "Chile", "France", "China", "Mexico", "India", "Japan", "Germany"]
 country_options = df['Country'].unique().tolist()
 filtered_default_values = [x for x in default_values if x in country_options]
@@ -43,7 +47,6 @@ df_sel = df[df['Country'].isin(country_sel)]
 # Take average of value for each variable and year, if any duplication
 df_sel_avg = df_sel.groupby(['Country', 'Region', 'Continent', 'YEAR', 'VARIABLE_NAME'])['VALUE'].mean().reset_index() 
 df_sel_avg = df_sel_avg.sort_values(['VARIABLE_NAME', 'YEAR', 'Country'])
-#st.write(df_sel_avg)
 
 # Get the common years between the selected countries
 years = set(df_sel_avg['YEAR'].unique().tolist())
@@ -56,7 +59,6 @@ year_list = sorted(list(years))
 # Now we have to pivot the table to have the variables as columns!
 df_data_aux = df_sel_avg[df_sel_avg['YEAR'].isin(year_list)]
 df_data = df_data_aux.pivot(index=['Country', 'Region', 'Continent', 'YEAR'], columns='VARIABLE_NAME', values='VALUE').reset_index()
-#st.write(df_data)
 
 if len(year_list) <= 1:
     st.write("No common years between the selected countries")
@@ -75,6 +77,7 @@ else:
         You can change all the properties, and create a different plot.
 
         Another combinations you might want to try:
+
         **Who's using my electricity?**
         * X-Axis: "Annual Consumption of Electricity"
 
