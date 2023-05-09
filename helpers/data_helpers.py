@@ -6,7 +6,7 @@ import pandas as pd
 variable_name_options = [
 "Fertility Rate",
 "Life Expectancy",
-"Population",
+"Total Population",
 "Precipitation Rate: Based on RCP 8.5",
 "Count of Mortality Event (Per Capita)",
 "Precipitation Rate",
@@ -31,17 +31,6 @@ variable_name_options = [
 "Count of Mortality Event (Age Adjusted) (Per Capita)",
 ]    
 
-def set_page_config(page_title="GapMinder App", page_icon=":globe_with_meridians:"):
-    """Set the page configuration, once for all"""
-    st.set_page_config(
-        page_title=page_title,
-        page_icon=page_icon,
-        layout="wide",
-        initial_sidebar_state="expanded",
-        menu_items={
-            'About': "A gapminder emulator with free resources"
-        }
-    )    
 
 @st.cache_resource
 def create_session_object():

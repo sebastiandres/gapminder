@@ -1,7 +1,8 @@
 # Snowpark
 import streamlit as st
 
-from helpers.data_helpers import set_page_config, eval_sql
+from helpers.other_helpers import set_page_config
+from helpers.data_helpers import eval_sql
 
 set_page_config()
 

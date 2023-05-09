@@ -2,7 +2,8 @@
 import streamlit as st
 import pandas as pd
 
-from helpers.data_helpers import set_page_config, eval_sql, variable_name_options
+from helpers.other_helpers import set_page_config
+from helpers.data_helpers import eval_sql, variable_name_options
 from helpers.vizzu_helpers import st_vizzu, gapminder_2d_config
 
 set_page_config()

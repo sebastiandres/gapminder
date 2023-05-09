@@ -7,7 +7,8 @@ from streamlit.components.v1 import html
 
 from ipyvizzu import Data, Config, Style
 
-from helpers.data_helpers import set_page_config, eval_sql
+from helpers.other_helpers import set_page_config
+from helpers.data_helpers import eval_sql
 from helpers.vizzu_helpers import vizzu_story
 
 ssl._create_default_https_context = ssl._create_unverified_context
