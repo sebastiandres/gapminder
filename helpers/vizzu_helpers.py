@@ -27,10 +27,10 @@ def vizzu_animation(data, frame_list, height):
     # initialize Chart
     chart = Chart(width=f"100%", display=DisplayTarget.MANUAL)
     # Animation
-    chart.animate(data)
+    chart.animate(data, delay=0.0, duration=0.0)
     # add animation frames
     for frame in frame_list:
-        chart.animate(*frame)
+        chart.animate(*frame, delay=0.25, duration=1.0) # delay = time on slide, duration=animation_duration
     return html(chart._repr_html_(), height=height)
 
 
@@ -87,6 +87,7 @@ def gapminder_2d_config(df_data, year_list,
     """
     Creates the data and the frame_list to be ready to pass to the vizzu chart.
     """
+    print(y_axis_sel)
     # Data to be used
     data = Data()
     data.add_data_frame(df_data)
@@ -108,20 +109,21 @@ def gapminder_2d_config(df_data, year_list,
                 ),
             )
     frame_list.append(frame)
-    # Data
     for year in year_list:
-        # add config to Chart
+        year = str(year)
         frame = (
                     data.filter(
                         f'record["YEAR"] == "{year}"'
                     ),
                     Config(
                         {
-                            "x": x_axis_sel,
-                            "y": y_axis_sel,
-                            "title": f"Year {year}",
-                            "size": bubble_size_sel,
+                        "channels": {
+                                "x": x_axis_sel,
+                                "y": y_axis_sel,
+                                "size": bubble_size_sel,
+                        },
                             "geometry": "circle",
+                            "title": f"Year {year}",
                         }
                     ),
                 )
@@ -157,7 +159,7 @@ def gapminder_1d_config(df_data, year_list,
                     }
                 ),
             )
-    frame_list.append(frame)
+
     # Data
     for year in year_list:
         # add config to Chart
@@ -173,37 +175,64 @@ def gapminder_1d_config(df_data, year_list,
                             "channels": {
                                 "label": x_axis_sel,
                             },
+                            "geometry": "rectangle",
                         }
-                    ),
+                    )
                 )
         frame_list.append(frame)
     return data, frame_list
 
 if __name__=="__main__":
-    data_frame = pd.read_csv("data/titanic.csv")
-    frames = [
-                (
-                    Config(
-                        {
-                            "x": "Count",
-                            "y": "Sex",
-                            "label": "Count",
-                            "title": "Passengers of the Titanic",
-                        }
+    test = "gapminder_1d"
+    if test=="titanic":
+        data_frame = pd.read_csv("data/titanic.csv")
+        frames = [
+                    (
+                        Config(
+                            {
+                                "x": "Count",
+                                "y": "Sex",
+                                "label": "Count",
+                                "title": "Passengers of the Titanic",
+                            }
+                        ),
                     ),
-                ),
-                (
-                    Config(
-                        {
-                            "x": ["Count", "Survived"],
-                            "label": ["Count", "Survived"],
-                            "color": "Survived",
-                        }
-                    ), 
-                ),
-                (
-                    Config({"x": "Count", "y": ["Sex", "Survived"]}),
-                )
-    ]
-    _, col, _ = st.columns([1,4,1])
-    st_vizzu(data_frame, frames, col, height=600)
+                    (
+                        Config(
+                            {
+                                "x": ["Count", "Survived"],
+                                "label": ["Count", "Survived"],
+                                "color": "Survived",
+                            }
+                        ), 
+                    ),
+                    (
+                        Config({"x": "Count", "y": ["Sex", "Survived"]}),
+                    )
+        ]
+        _, col, _ = st.columns([1,4,1])
+        st_vizzu(data_frame, frames, col, height=600)
+    elif test=="gapminder_2d":
+        df_data = pd.read_csv("data/gapminder_2d.csv")
+        year_list = ["1960","1961","1962","1963","1964","1965","1966","1967","1968","1969","1970","1971","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021"]
+        x_axis_sel = "Fertility Rate"
+        y_axis_sel = "Life Expectancy"
+        bubble_size_sel = "Total Population"
+        bubble_color_sel = "Continent"
+        data_frame, frame_list = gapminder_2d_config(df_data, year_list, 
+                        x_axis_sel, y_axis_sel, 
+                        bubble_size_sel, bubble_color_sel)
+        _, col, _ = st.columns([1,4,1])
+        st_vizzu(data_frame, frame_list, col, height=600)
+    elif test=="gapminder_1d":
+        df_data = pd.read_csv("data/gapminder_2d.csv")
+        year_list = ["1960","1961","1962","1963","1964","1965","1966","1967","1968","1969","1970","1971","1972","1973","1974","1975","1976","1977","1978","1979","1980","1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021"]
+        x_axis_sel = "Fertility Rate"
+        y_axis_sel = "Life Expectancy"
+        bubble_size_sel = "Total Population"
+        bubble_color_sel = "Continent"
+        data_frame, frame_list = gapminder_1d_config(df_data, year_list, 
+                        x_axis_sel)
+        _, col, _ = st.columns([1,4,1])
+        st_vizzu(data_frame, frame_list, col, height=600)
+

@@ -2,6 +2,8 @@ import streamlit as st
 from snowflake.snowpark.session import Session
 import iso3166
 import pandas as pd
+#import duckdb
+import os
 
 variable_name_options = [
 "Fertility Rate",
@@ -32,7 +34,7 @@ variable_name_options = [
 ]    
 
 
-@st.cache_resource
+#@st.cache_resource
 def create_session_object():
     """
     Connects the old way to Snowflake, using the Snowpark connector.
@@ -52,7 +54,7 @@ def create_session_object():
     return session
 
 
-@st.cache_data
+#@st.cache_data
 def eval_sql_old(query):
     """
     Evaluates a query, the old way
@@ -66,7 +68,7 @@ def eval_sql_old(query):
     return df_data
 
 
-@st.cache_resource
+#s@st.cache_resource
 def create_connection():
     """
     Creates the connection, so simply!
@@ -74,17 +76,44 @@ def create_connection():
     connection = st.experimental_connection('snowpark')
     return connection
 
-@st.cache_data
-def eval_sql(query):
+#@st.cache_data
+def eval_sql(query, table="TIMESERIES"):
     """
     Evaluates a query, so simple!
     """
-    # Initialize session, if not already done
+    # Reformat for pandas query
+    #query = query.replace("\n", " ").replace("\t", " ")
+    #print("replaced", query)
+    """
+    # Check if table is stored as a csv file in the data folder
+    file_name = f"data/{table}.csv"
+    if os.path.exists(file_name):
+        df_all_data = pd.read_csv(file_name)
+        print(df_all_data)
+        query_df = query.replace(table, "df_all_data")
+        print("query_df", query_df)
+        df_data = duckdb.query(query_df).df()
+        print("Using cached data")
+    else:
+        sql_query_all_data = f"SELECT * FROM {table}"
+        # Initialize session, if not already done
+        if "connection" not in st.session_state:
+            st.session_state.connection = create_connection()
+        # Eval the query
+        #print("Small query")
+        df_data = st.session_state.connection.query(query, ttl=600)
+        # Eval all the data
+        #print("Big query")
+        #df_all_data = st.session_state.connection.query(sql_query_all_data, ttl=600)
+        # Save the data as a csv file
+        #print("Saving csv")
+        #df_all_data.to_csv(file_name, index=False)
+        #df_data = snow_data.to_pandas()
+    """
     if "connection" not in st.session_state:
         st.session_state.connection = create_connection()
     # Eval the query
     df_data = st.session_state.connection.query(query, ttl=600)
-    #df_data = snow_data.to_pandas()
     return df_data
 
 @st.cache_data

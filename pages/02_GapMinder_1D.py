@@ -58,6 +58,8 @@ year_list = sorted(list(years))
 
 # Now we have to pivot the table to have the variables as columns!
 df_data_aux = df_sel_avg[df_sel_avg['YEAR'].isin(year_list)]
+df_data_aux["YEAR"] = df_data_aux["YEAR"].astype(int)
+df_data_aux["VALUE"] = df_data_aux["VALUE"].astype(float)
 df_data = df_data_aux.pivot(index=['Country', 'Region', 'Continent', 'YEAR'], columns='VARIABLE_NAME', values='VALUE').reset_index()
 
 if len(year_list) <= 1:

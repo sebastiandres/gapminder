@@ -1,0 +1,497 @@
+Country,Region,Continent,YEAR,Fertility Rate,Life Expectancy,Total Population
+Chile,South America,Americas,1960,4.697,57.015,8141820.0
+Chile,South America,Americas,1961,4.655,57.537,8313535.0
+Chile,South America,Americas,1962,4.602,57.771,8486120.0
+Chile,South America,Americas,1963,4.536,57.15,8656006.0
+Chile,South America,Americas,1964,4.457,58.738,8825046.0
+Chile,South America,Americas,1965,4.364,59.455,8994936.0
+Chile,South America,Americas,1966,4.259,59.689,9161649.0
+Chile,South America,Americas,1967,4.144,60.72,9326268.0
+Chile,South America,Americas,1968,4.025,61.63,9491502.0
+Chile,South America,Americas,1969,3.902,61.905,9656299.0
+Chile,South America,Americas,1970,3.778,62.491,9820481.0
+Chile,South America,Americas,1971,3.654,62.732,9984378.0
+Chile,South America,Americas,1972,3.53,62.281,10145765.0
+Chile,South America,Americas,1973,3.409,63.905,10307842.0
+Chile,South America,Americas,1974,3.293,64.901,10472743.0
+Chile,South America,Americas,1975,3.182,66.279,10639531.0
+Chile,South America,Americas,1976,3.078,65.855,10804869.0
+Chile,South America,Americas,1977,2.981,67.402,10969861.0
+Chile,South America,Americas,1978,2.892,68.074,11137748.0
+Chile,South America,Americas,1979,2.812,68.186,11304331.0
+Chile,South America,Americas,1980,2.744,68.84,11469828.0
+Chile,South America,Americas,1981,2.689,69.909,11637613.0
+Chile,South America,Americas,1982,2.648,70.299,11807408.0
+Chile,South America,Americas,1983,2.619,70.011,11976513.0
+Chile,South America,Americas,1984,2.601,70.46,12147758.0
+Chile,South America,Americas,1985,2.592,71.176,12326396.0
+Chile,South America,Americas,1986,2.589,71.81,12514502.0
+Chile,South America,Americas,1987,2.59,72.54,12712784.0
+Chile,South America,Americas,1988,2.591,72.456,12918389.0
+Chile,South America,Americas,1989,2.589,72.467,13128619.0
+Chile,South America,Americas,1990,2.579,72.574,13342868.0
+Chile,South America,Americas,1991,2.558,73.574,13561945.0
+Chile,South America,Americas,1992,2.478,74.135,13782297.0
+Chile,South America,Americas,1993,2.43,74.195,13998386.0
+Chile,South America,Americas,1994,2.377,74.614,14210674.0
+Chile,South America,Americas,1995,2.303,74.609,14416796.0
+Chile,South America,Americas,1996,2.245,74.899,14615483.0
+Chile,South America,Americas,1997,2.177,75.596,14809289.0
+Chile,South America,Americas,1998,2.112,75.669,14996742.0
+Chile,South America,Americas,1999,2.044,76.018,15176410.0
+Chile,South America,Americas,2000,1.987,76.87,15351799.0
+Chile,South America,Americas,2001,1.961,76.773,15523978.0
+Chile,South America,Americas,2002,1.935,77.445,15693790.0
+Chile,South America,Americas,2003,1.873,77.387,15859112.0
+Chile,South America,Americas,2004,1.826,77.616,16017966.0
+Chile,South America,Americas,2005,1.803,78.016,16175311.0
+Chile,South America,Americas,2006,1.803,78.261,16334575.0
+Chile,South America,Americas,2007,1.826,77.826,16495538.0
+Chile,South America,Americas,2008,1.85,78.484,16661462.0
+Chile,South America,Americas,2009,1.855,78.741,16833447.0
+Chile,South America,Americas,2010,1.844,78.501,17004162.0
+Chile,South America,Americas,2011,1.823,79.11,17173573.0
+Chile,South America,Americas,2012,1.798,79.023,17341771.0
+Chile,South America,Americas,2013,1.786,79.339,17509925.0
+Chile,South America,Americas,2014,1.774,79.473,17687108.0
+Chile,South America,Americas,2015,1.737,79.746,17870124.0
+Chile,South America,Americas,2016,1.676,80.079,18083879.0
+Chile,South America,Americas,2017,1.598,80.35,18368577.0
+Chile,South America,Americas,2018,1.564,80.133,18701450.0
+Chile,South America,Americas,2019,1.545,80.326,19039485.0
+Chile,South America,Americas,2020,1.537,79.377,19300315.0
+Chile,South America,Americas,2021,1.537,78.944,19493184.0
+China,East Asia,Asia,1960,4.451,33.275,667070000.0
+China,East Asia,Asia,1961,3.863,40.468,660330000.0
+China,East Asia,Asia,1962,6.085,50.818,665770000.0
+China,East Asia,Asia,1963,7.513,51.408,682335000.0
+China,East Asia,Asia,1964,6.672,52.156,698355000.0
+China,East Asia,Asia,1965,6.605,52.912,715185000.0
+China,East Asia,Asia,1966,6.307,53.637,735400000.0
+China,East Asia,Asia,1967,5.806,54.351,754550000.0
+China,East Asia,Asia,1968,6.508,55.057,774510000.0
+China,East Asia,Asia,1969,6.175,55.738,796025000.0
+China,East Asia,Asia,1970,6.085,56.607,818315000.0
+China,East Asia,Asia,1971,5.523,57.565,841105000.0
+China,East Asia,Asia,1972,5.112,58.418,862030000.0
+China,East Asia,Asia,1973,4.726,59.389,881940000.0
+China,East Asia,Asia,1974,4.17,60.168,900350000.0
+China,East Asia,Asia,1975,3.571,60.917,916395000.0
+China,East Asia,Asia,1976,3.235,61.796,930685000.0
+China,East Asia,Asia,1977,2.844,62.538,943455000.0
+China,East Asia,Asia,1978,2.716,63.218,956165000.0
+China,East Asia,Asia,1979,2.745,63.865,969005000.0
+China,East Asia,Asia,1980,2.739,64.42,981235000.0
+China,East Asia,Asia,1981,2.792,64.975,993885000.0
+China,East Asia,Asia,1982,2.972,65.463,1008630000.0
+China,East Asia,Asia,1983,2.559,65.904,1023310000.0
+China,East Asia,Asia,1984,2.607,66.3,1036825000.0
+China,East Asia,Asia,1985,2.633,66.643,1051040000.0
+China,East Asia,Asia,1986,2.721,66.97,1066790000.0
+China,East Asia,Asia,1987,2.76,67.288,1084035000.0
+China,East Asia,Asia,1988,2.539,67.581,1101630000.0
+China,East Asia,Asia,1989,2.52,67.838,1118650000.0
+China,East Asia,Asia,1990,2.514,68.005,1135185000.0
+China,East Asia,Asia,1991,1.934,68.169,1150780000.0
+China,East Asia,Asia,1992,1.776,68.734,1164970000.0
+China,East Asia,Asia,1993,1.691,69.216,1178440000.0
+China,East Asia,Asia,1994,1.628,69.52,1191835000.0
+China,East Asia,Asia,1995,1.588,70.008,1204855000.0
+China,East Asia,Asia,1996,1.554,70.266,1217550000.0
+China,East Asia,Asia,1997,1.527,70.672,1230075000.0
+China,East Asia,Asia,1998,1.522,71.172,1241935000.0
+China,East Asia,Asia,1999,1.53,71.419,1252735000.0
+China,East Asia,Asia,2000,1.628,71.881,1262645000.0
+China,East Asia,Asia,2001,1.563,72.606,1271850000.0
+China,East Asia,Asia,2002,1.566,72.985,1280400000.0
+China,East Asia,Asia,2003,1.57,73.371,1288400000.0
+China,East Asia,Asia,2004,1.605,73.748,1296075000.0
+China,East Asia,Asia,2005,1.624,74.111,1303720000.0
+China,East Asia,Asia,2006,1.644,74.504,1311020000.0
+China,East Asia,Asia,2007,1.666,74.762,1317885000.0
+China,East Asia,Asia,2008,1.701,74.872,1324655000.0
+China,East Asia,Asia,2009,1.714,75.343,1331260000.0
+China,East Asia,Asia,2010,1.687,75.599,1348730051.0
+China,East Asia,Asia,2011,1.668,75.903,1356257632.0
+China,East Asia,Asia,2012,1.798,76.192,1364694309.5
+China,East Asia,Asia,2013,1.714,76.452,1373016606.0
+China,East Asia,Asia,2014,1.769,76.717,1380985194.0
+China,East Asia,Asia,2015,1.67,76.977,1388444276.5
+China,East Asia,Asia,2016,1.772,77.218,1395645182.5
+China,East Asia,Asia,2017,1.813,77.248,1402866198.5
+China,East Asia,Asia,2018,1.554,77.744,1402760000.0
+China,East Asia,Asia,2019,1.496,77.968,1407745000.0
+China,East Asia,Asia,2020,1.281,78.077,1411100000.0
+China,East Asia,Asia,2021,1.164,78.211,1412360000.0
+France,Western Europe,Europe,1960,2.85,69.86829,46649927.0
+France,Western Europe,Europe,1961,2.87,70.11707,47161641.0
+France,Western Europe,Europe,1962,2.89,70.31463,47679792.0
+France,Western Europe,Europe,1963,2.89,70.51463,48189939.0
+France,Western Europe,Europe,1964,2.87,70.66341,48733997.0
+France,Western Europe,Europe,1965,2.84,70.8122,49282756.0
+France,Western Europe,Europe,1966,2.8,70.96098,49817041.0
+France,Western Europe,Europe,1967,2.75,71.16098,50334012.0
+France,Western Europe,Europe,1968,2.69,71.30976,50817020.0
+France,Western Europe,Europe,1969,2.62,71.45854,51272683.0
+France,Western Europe,Europe,1970,2.55,71.65854,51724116.0
+France,Western Europe,Europe,1971,2.47,71.90732,52185222.0
+France,Western Europe,Europe,1972,2.38,72.10732,52637888.0
+France,Western Europe,Europe,1973,2.28,72.3561,53053660.0
+France,Western Europe,Europe,1974,2.18,72.60488,53415250.0
+France,Western Europe,Europe,1975,2.09,72.85366,53715733.0
+France,Western Europe,Europe,1976,2.01,73.10244,53966558.0
+France,Western Europe,Europe,1977,1.94,73.35122,54221988.0
+France,Western Europe,Europe,1978,1.89,73.60244,54486195.0
+France,Western Europe,Europe,1979,1.87,73.85122,54753575.0
+France,Western Europe,Europe,1980,1.85,74.05122,55052582.0
+France,Western Europe,Europe,1981,1.85,74.3,55371044.0
+France,Western Europe,Europe,1982,1.86,74.5,55694106.0
+France,Western Europe,Europe,1983,1.86,74.8,55992656.0
+France,Western Europe,Europe,1984,1.86,75.0,56275701.0
+France,Western Europe,Europe,1985,1.86,75.3,56569195.0
+France,Western Europe,Europe,1986,1.85,75.6,56865193.0
+France,Western Europe,Europe,1987,1.83,75.8,57168409.0
+France,Western Europe,Europe,1988,1.81,76.1,57472651.0
+France,Western Europe,Europe,1989,1.79,76.34878,57766282.0
+France,Western Europe,Europe,1990,1.77,76.6,58044701.0
+France,Western Europe,Europe,1991,1.75,76.84878,58557577.0
+France,Western Europe,Europe,1992,1.74,77.1,58849943.0
+France,Western Europe,Europe,1993,1.73,77.3,59106166.0
+France,Western Europe,Europe,1994,1.73,77.64878,59327585.0
+France,Western Europe,Europe,1995,1.74,77.75122,59543659.0
+France,Western Europe,Europe,1996,1.75,77.95366,59756533.0
+France,Western Europe,Europe,1997,1.77,78.30488,59969944.0
+France,Western Europe,Europe,1998,1.78,78.60488,60192790.0
+France,Western Europe,Europe,1999,1.81,78.7561,60504420.0
+France,Western Europe,Europe,2000,1.89,79.0561,60921384.0
+France,Western Europe,Europe,2001,1.9,79.15854,61367388.0
+France,Western Europe,Europe,2002,1.88,79.26098,61816234.0
+France,Western Europe,Europe,2003,1.89,79.11463,62256970.0
+France,Western Europe,Europe,2004,1.92,80.16341,62716306.0
+France,Western Europe,Europe,2005,1.94,80.16341,63188395.0
+France,Western Europe,Europe,2006,2.0,80.8122,63628261.0
+France,Western Europe,Europe,2007,1.98,81.1122,64021737.0
+France,Western Europe,Europe,2008,2.01,81.21463,64379696.0
+France,Western Europe,Europe,2009,2.0,81.41463,64710879.0
+France,Western Europe,Europe,2010,2.03,81.66341,65030575.0
+France,Western Europe,Europe,2011,2.01,82.11463,65345233.0
+France,Western Europe,Europe,2012,2.01,81.96829,65662240.0
+France,Western Europe,Europe,2013,1.99,82.21951,66002289.0
+France,Western Europe,Europe,2014,2.0,82.71951,66312067.0
+France,Western Europe,Europe,2015,1.96,82.32195,66548272.0
+France,Western Europe,Europe,2016,1.92,82.57317,66724104.0
+France,Western Europe,Europe,2017,1.89,82.57561,66918020.0
+France,Western Europe,Europe,2018,1.87,82.67561,67158348.0
+France,Western Europe,Europe,2019,1.86,82.82683,67388001.0
+France,Western Europe,Europe,2020,1.83,82.17561,67571107.0
+France,Western Europe,Europe,2021,1.83,82.32439,67574316.0
+Germany,Western Europe,Europe,1960,2.37,69.06407,72814900.0
+Germany,Western Europe,Europe,1961,2.45,69.64488,73377632.0
+Germany,Western Europe,Europe,1962,2.44,69.79922,74025784.0
+Germany,Western Europe,Europe,1963,2.51,69.91407,74714353.0
+Germany,Western Europe,Europe,1964,2.54,70.43556,75318337.0
+Germany,Western Europe,Europe,1965,2.5,70.41037,75963695.0
+Germany,Western Europe,Europe,1966,2.53,70.52159,76600311.0
+Germany,Western Europe,Europe,1967,2.48,70.73173,76951336.0
+Germany,Western Europe,Europe,1968,2.38,70.37846,77294314.0
+Germany,Western Europe,Europe,1969,2.21,70.2288,77909682.0
+Germany,Western Europe,Europe,1970,2.03,70.4472,78169289.0
+Germany,Western Europe,Europe,1971,1.92,70.67676,78312842.0
+Germany,Western Europe,Europe,1972,1.71,70.90671,78688452.0
+Germany,Western Europe,Europe,1973,1.54,71.1128,78936666.0
+Germany,Western Europe,Europe,1974,1.51,71.41893,78967433.0
+Germany,Western Europe,Europe,1975,1.45,71.25924,78673554.0
+Germany,Western Europe,Europe,1976,1.45,71.71222,78336950.0
+Germany,Western Europe,Europe,1977,1.4,72.30732,78159814.0
+Germany,Western Europe,Europe,1978,1.38,72.29041,78091820.0
+Germany,Western Europe,Europe,1979,1.38,72.63017,78126350.0
+Germany,Western Europe,Europe,1980,1.44,72.80032,78288576.0
+Germany,Western Europe,Europe,1981,1.43,73.04022,78407907.0
+Germany,Western Europe,Europe,1982,1.41,73.33315,78333366.0
+Germany,Western Europe,Europe,1983,1.33,73.62215,78128282.0
+Germany,Western Europe,Europe,1984,1.29,74.07229,77858685.0
+Germany,Western Europe,Europe,1985,1.37,74.1891,77684873.0
+Germany,Western Europe,Europe,1986,1.43,74.39683,77720436.0
+Germany,Western Europe,Europe,1987,1.43,74.80702,77839920.0
+Germany,Western Europe,Europe,1988,1.46,74.99873,78144619.0
+Germany,Western Europe,Europe,1989,1.42,75.19154,78751283.0
+Germany,Western Europe,Europe,1990,1.45,75.08563,79433029.0
+Germany,Western Europe,Europe,1991,1.33,75.31951,80013896.0
+Germany,Western Europe,Europe,1992,1.29,75.81951,80624598.0
+Germany,Western Europe,Europe,1993,1.28,75.87073,81156363.0
+Germany,Western Europe,Europe,1994,1.24,76.27073,81438348.0
+Germany,Western Europe,Europe,1995,1.25,76.42195,81678051.0
+Germany,Western Europe,Europe,1996,1.3,76.67317,81914831.0
+Germany,Western Europe,Europe,1997,1.35,77.07317,82034771.0
+Germany,Western Europe,Europe,1998,1.36,77.47561,82047195.0
+Germany,Western Europe,Europe,1999,1.36,77.72683,82100243.0
+Germany,Western Europe,Europe,2000,1.38,77.92683,82211508.0
+Germany,Western Europe,Europe,2001,1.35,78.32927,82349925.0
+Germany,Western Europe,Europe,2002,1.34,78.22927,82488495.0
+Germany,Western Europe,Europe,2003,1.34,78.38049,82534176.0
+Germany,Western Europe,Europe,2004,1.36,78.68049,82516260.0
+Germany,Western Europe,Europe,2005,1.34,78.93171,82469422.0
+Germany,Western Europe,Europe,2006,1.33,79.13171,82376451.0
+Germany,Western Europe,Europe,2007,1.37,79.53415,82266372.0
+Germany,Western Europe,Europe,2008,1.38,79.73659,82110097.0
+Germany,Western Europe,Europe,2009,1.36,79.83659,81902307.0
+Germany,Western Europe,Europe,2010,1.39,79.9878,81776930.0
+Germany,Western Europe,Europe,2011,1.39,80.43659,80274983.0
+Germany,Western Europe,Europe,2012,1.41,80.53902,80425823.0
+Germany,Western Europe,Europe,2013,1.42,80.49024,80645605.0
+Germany,Western Europe,Europe,2014,1.47,81.09024,81033050.0
+Germany,Western Europe,Europe,2015,1.5,80.64146,81489505.5
+Germany,Western Europe,Europe,2016,1.6,80.99024,82348669.0
+Germany,Western Europe,Europe,2017,1.57,80.99268,82657002.0
+Germany,Western Europe,Europe,2018,1.57,80.89268,82942441.0
+Germany,Western Europe,Europe,2019,1.54,81.29268,83121131.0
+Germany,Western Europe,Europe,2020,1.53,81.04146,83130435.5
+Germany,Western Europe,Europe,2021,1.58,80.90098,83196078.0
+India,South Asia,Asia,1960,5.921,45.218,445954579.0
+India,South Asia,Asia,1961,5.937,45.398,456351876.0
+India,South Asia,Asia,1962,5.953,45.659,467024193.0
+India,South Asia,Asia,1963,5.969,45.936,477933619.0
+India,South Asia,Asia,1964,5.979,46.184,489059309.0
+India,South Asia,Asia,1965,5.941,44.98,500114346.0
+India,South Asia,Asia,1966,5.881,45.333,510992617.0
+India,South Asia,Asia,1967,5.825,45.674,521987069.0
+India,South Asia,Asia,1968,5.76,47.471,533431909.0
+India,South Asia,Asia,1969,5.684,47.857,545314670.0
+India,South Asia,Asia,1970,5.624,48.241,557501301.0
+India,South Asia,Asia,1971,5.565,48.632,569999178.0
+India,South Asia,Asia,1972,5.482,49.025,582837973.0
+India,South Asia,Asia,1973,5.402,49.539,596107483.0
+India,South Asia,Asia,1974,5.325,50.244,609721951.0
+India,South Asia,Asia,1975,5.195,50.812,623524219.0
+India,South Asia,Asia,1976,5.13,51.388,637451448.0
+India,South Asia,Asia,1977,5.007,51.909,651685628.0
+India,South Asia,Asia,1978,4.888,52.492,666267760.0
+India,South Asia,Asia,1979,4.808,53.06,681248383.0
+India,South Asia,Asia,1980,4.775,53.611,696828385.0
+India,South Asia,Asia,1981,4.698,54.175,712869298.0
+India,South Asia,Asia,1982,4.62,54.732,729169466.0
+India,South Asia,Asia,1983,4.565,55.281,745826546.0
+India,South Asia,Asia,1984,4.516,55.816,762895156.0
+India,South Asia,Asia,1985,4.432,56.334,780242084.0
+India,South Asia,Asia,1986,4.399,56.835,797878993.0
+India,South Asia,Asia,1987,4.311,57.315,815716125.0
+India,South Asia,Asia,1988,4.222,57.777,833729681.0
+India,South Asia,Asia,1989,4.132,58.233,852012673.0
+India,South Asia,Asia,1990,4.045,58.652,870452165.0
+India,South Asia,Asia,1991,3.959,59.055,888941756.0
+India,South Asia,Asia,1992,3.877,59.452,907574049.0
+India,South Asia,Asia,1993,3.799,59.815,926351297.0
+India,South Asia,Asia,1994,3.723,60.216,945261958.0
+India,South Asia,Asia,1995,3.651,60.596,964279129.0
+India,South Asia,Asia,1996,3.582,60.984,983281218.0
+India,South Asia,Asia,1997,3.514,61.388,1002335230.0
+India,South Asia,Asia,1998,3.446,61.792,1021434576.0
+India,South Asia,Asia,1999,3.383,62.207,1040500054.0
+India,South Asia,Asia,2000,3.35,62.669,1059633675.0
+India,South Asia,Asia,2001,3.303,63.091,1078970907.0
+India,South Asia,Asia,2002,3.217,63.616,1098313039.0
+India,South Asia,Asia,2003,3.122,64.094,1117415123.0
+India,South Asia,Asia,2004,3.046,64.524,1136264583.0
+India,South Asia,Asia,2005,2.958,64.996,1154638713.0
+India,South Asia,Asia,2006,2.864,65.412,1172373788.0
+India,South Asia,Asia,2007,2.784,65.788,1189691809.0
+India,South Asia,Asia,2008,2.718,66.149,1206734806.0
+India,South Asia,Asia,2009,2.673,66.513,1223640160.0
+India,South Asia,Asia,2010,2.603,66.909,1240613620.0
+India,South Asia,Asia,2011,2.536,67.359,1257621191.0
+India,South Asia,Asia,2012,2.467,67.887,1274487215.0
+India,South Asia,Asia,2013,2.406,68.46,1291132063.0
+India,South Asia,Asia,2014,2.306,69.074,1288101934.3333333
+India,South Asia,Asia,2015,2.287,69.636,1315960242.5
+India,South Asia,Asia,2016,2.273,70.117,1331403847.0
+India,South Asia,Asia,2017,2.2,70.467,1346687903.5
+India,South Asia,Asia,2018,2.177,70.71,1359110631.0
+India,South Asia,Asia,2019,2.109,70.91,1383112050.0
+India,South Asia,Asia,2020,2.051,70.15,1396387127.0
+India,South Asia,Asia,2021,2.031,67.24,1407563842.0
+Japan,East Asia,Asia,1960,2.0,67.69561,93216000.0
+Japan,East Asia,Asia,1961,1.96,68.35195,94055000.0
+Japan,East Asia,Asia,1962,1.98,68.63488,94933000.0
+Japan,East Asia,Asia,1963,2.0,69.71244,95900000.0
+Japan,East Asia,Asia,1964,2.05,70.20659,96903000.0
+Japan,East Asia,Asia,1965,2.14,70.26683,97952000.0
+Japan,East Asia,Asia,1966,1.58,70.91585,98851000.0
+Japan,East Asia,Asia,1967,2.23,71.4661,99879000.0
+Japan,East Asia,Asia,1968,2.13,71.61098,101011000.0
+Japan,East Asia,Asia,1969,2.13,71.85805,102219000.0
+Japan,East Asia,Asia,1970,2.13,71.91976,103403000.0
+Japan,East Asia,Asia,1971,2.16,72.80902,105697000.0
+Japan,East Asia,Asia,1972,2.14,73.15366,107188000.0
+Japan,East Asia,Asia,1973,2.14,73.29512,108707000.0
+Japan,East Asia,Asia,1974,2.05,73.6722,110162000.0
+Japan,East Asia,Asia,1975,1.91,74.24707,111573000.0
+Japan,East Asia,Asia,1976,1.85,74.68659,112775000.0
+Japan,East Asia,Asia,1977,1.8,75.25585,113872000.0
+Japan,East Asia,Asia,1978,1.79,75.58463,114913000.0
+Japan,East Asia,Asia,1979,1.77,76.10878,115890000.0
+Japan,East Asia,Asia,1980,1.75,75.98902,116807000.0
+Japan,East Asia,Asia,1981,1.74,76.39488,117661000.0
+Japan,East Asia,Asia,1982,1.77,76.87366,118480000.0
+Japan,East Asia,Asia,1983,1.8,76.92195,119307000.0
+Japan,East Asia,Asia,1984,1.81,77.29122,120083000.0
+Japan,East Asia,Asia,1985,1.76,77.56049,120837000.0
+Japan,East Asia,Asia,1986,1.72,78.01049,121482000.0
+Japan,East Asia,Asia,1987,1.69,78.42951,122069000.0
+Japan,East Asia,Asia,1988,1.66,78.34976,122578000.0
+Japan,East Asia,Asia,1989,1.57,78.76854,123069000.0
+Japan,East Asia,Asia,1990,1.54,78.83707,123478000.0
+Japan,East Asia,Asia,1991,1.53,79.03683,123964000.0
+Japan,East Asia,Asia,1992,1.5,79.08024,124425000.0
+Japan,East Asia,Asia,1993,1.46,79.30366,124829000.0
+Japan,East Asia,Asia,1994,1.5,79.69683,125178000.0
+Japan,East Asia,Asia,1995,1.42,79.5361,125521123.0
+Japan,East Asia,Asia,1996,1.43,80.21976,125757000.0
+Japan,East Asia,Asia,1997,1.39,80.42415,126057000.0
+Japan,East Asia,Asia,1998,1.38,80.50146,126400000.0
+Japan,East Asia,Asia,1999,1.34,80.46098,126631000.0
+Japan,East Asia,Asia,2000,1.36,81.0761,126884421.5
+Japan,East Asia,Asia,2001,1.33,81.41634,127149000.0
+Japan,East Asia,Asia,2002,1.32,81.69073,127445000.0
+Japan,East Asia,Asia,2003,1.29,81.76,127718000.0
+Japan,East Asia,Asia,2004,1.29,82.03024,127761000.0
+Japan,East Asia,Asia,2005,1.26,81.95512,127773000.0
+Japan,East Asia,Asia,2006,1.32,82.32195,127854000.0
+Japan,East Asia,Asia,2007,1.34,82.50707,128001000.0
+Japan,East Asia,Asia,2008,1.37,82.58756,128063000.0
+Japan,East Asia,Asia,2009,1.37,82.93146,128047000.0
+Japan,East Asia,Asia,2010,1.39,82.84268,128070000.0
+Japan,East Asia,Asia,2011,1.39,82.59122,127833000.0
+Japan,East Asia,Asia,2012,1.41,83.0961,127629000.0
+Japan,East Asia,Asia,2013,1.43,83.33195,127445000.0
+Japan,East Asia,Asia,2014,1.42,83.5878,127276000.0
+Japan,East Asia,Asia,2015,1.45,83.7939,127141000.0
+Japan,East Asia,Asia,2016,1.44,83.98488,127076000.0
+Japan,East Asia,Asia,2017,1.43,84.09976,126972000.0
+Japan,East Asia,Asia,2018,1.42,84.21098,126811000.0
+Japan,East Asia,Asia,2019,1.36,84.35634,126633000.0
+Japan,East Asia,Asia,2020,1.33,84.56,126261000.0
+Japan,East Asia,Asia,2021,1.3,84.44561,125681593.0
+Mexico,Central America,Americas,1960,6.763,55.017,36268055.0
+Mexico,Central America,Americas,1961,6.777,55.831,37439317.0
+Mexico,Central America,Americas,1962,6.8,56.599,38683283.0
+Mexico,Central America,Americas,1963,6.817,57.31,39982118.0
+Mexico,Central America,Americas,1964,6.833,57.947,41333878.0
+Mexico,Central America,Americas,1965,6.819,58.499,42737991.0
+Mexico,Central America,Americas,1966,6.79,58.981,44180437.0
+Mexico,Central America,Americas,1967,6.753,59.42,45656963.0
+Mexico,Central America,Americas,1968,6.707,59.835,47170337.0
+Mexico,Central America,Americas,1969,6.649,60.25,48714394.0
+Mexico,Central America,Americas,1970,6.551,60.69,50289306.0
+Mexico,Central America,Americas,1971,6.442,61.155,51897675.0
+Mexico,Central America,Americas,1972,6.318,61.614,53543436.0
+Mexico,Central America,Americas,1973,6.177,62.055,55228203.0
+Mexico,Central America,Americas,1974,6.004,62.459,56945880.0
+Mexico,Central America,Americas,1975,5.791,62.81,58691882.0
+Mexico,Central America,Americas,1976,5.603,63.123,60452543.0
+Mexico,Central America,Americas,1977,5.414,63.434,62262505.0
+Mexico,Central America,Americas,1978,5.254,63.778,64123997.0
+Mexico,Central America,Americas,1979,4.998,64.189,65972912.0
+Mexico,Central America,Americas,1980,4.776,64.703,67705186.0
+Mexico,Central America,Americas,1981,4.604,65.313,69233769.0
+Mexico,Central America,Americas,1982,4.443,65.975,70656783.0
+Mexico,Central America,Americas,1983,4.291,66.644,72080310.0
+Mexico,Central America,Americas,1984,4.184,67.29,73489654.0
+Mexico,Central America,Americas,1985,4.087,67.874,74872006.0
+Mexico,Central America,Americas,1986,3.971,68.388,76224365.0
+Mexico,Central America,Americas,1987,3.803,68.844,77553504.0
+Mexico,Central America,Americas,1988,3.65,69.253,78892015.0
+Mexico,Central America,Americas,1989,3.55,69.623,80233749.0
+Mexico,Central America,Americas,1990,3.45,69.971,81720428.0
+Mexico,Central America,Americas,1991,3.367,70.298,83351595.0
+Mexico,Central America,Americas,1992,3.292,70.616,84993164.0
+Mexico,Central America,Americas,1993,3.216,70.942,86648447.0
+Mexico,Central America,Americas,1994,3.127,71.279,88314424.0
+Mexico,Central America,Americas,1995,3.038,71.646,89969572.0
+Mexico,Central America,Americas,1996,2.956,72.037,91586555.0
+Mexico,Central America,Americas,1997,2.869,72.445,93183094.0
+Mexico,Central America,Americas,1998,2.8,72.845,94767284.0
+Mexico,Central America,Americas,1999,2.766,73.225,96334810.0
+Mexico,Central America,Americas,2000,2.716,73.569,97873442.0
+Mexico,Central America,Americas,2001,2.669,73.867,99394288.0
+Mexico,Central America,Americas,2002,2.623,74.106,100917081.0
+Mexico,Central America,Americas,2003,2.579,74.274,102429341.0
+Mexico,Central America,Americas,2004,2.536,74.372,103945813.0
+Mexico,Central America,Americas,2005,2.495,74.376,105442402.0
+Mexico,Central America,Americas,2006,2.456,74.331,106886790.0
+Mexico,Central America,Americas,2007,2.421,74.238,108302973.0
+Mexico,Central America,Americas,2008,2.391,74.152,109684489.0
+Mexico,Central America,Americas,2009,2.364,74.119,111049428.0
+Mexico,Central America,Americas,2010,2.34,74.8,112532401.0
+Mexico,Central America,Americas,2011,2.317,74.9,114150481.0
+Mexico,Central America,Americas,2012,2.294,75.0,115755909.0
+Mexico,Central America,Americas,2013,2.269,75.0,117290686.0
+Mexico,Central America,Americas,2014,2.211,75.0,118755887.0
+Mexico,Central America,Americas,2015,2.137,74.7,120149897.0
+Mexico,Central America,Americas,2016,2.086,74.8,121519221.0
+Mexico,Central America,Americas,2017,2.041,74.9,122839258.0
+Mexico,Central America,Americas,2018,1.996,75.0,124013861.0
+Mexico,Central America,Americas,2019,1.916,75.1,125085311.0
+Mexico,Central America,Americas,2020,1.905,75.2,125998302.0
+Mexico,Central America,Americas,2021,1.822,75.4,126705138.0
+United States,North America,Americas,1960,3.654,69.77073,179997166.5
+United States,North America,Americas,1961,3.62,70.27073,183691481.0
+United States,North America,Americas,1962,3.461,70.11951,186537737.0
+United States,North America,Americas,1963,3.319,69.91707,189241798.0
+United States,North America,Americas,1964,3.19,70.16585,191888791.0
+United States,North America,Americas,1965,2.913,70.21463,194302963.0
+United States,North America,Americas,1966,2.721,70.2122,196560338.0
+United States,North America,Americas,1967,2.558,70.56098,198712056.0
+United States,North America,Americas,1968,2.464,69.95122,200706052.0
+United States,North America,Americas,1969,2.456,70.50732,202676946.0
+United States,North America,Americas,1970,2.48,70.80732,204177102.5
+United States,North America,Americas,1971,2.266,71.10732,207660677.0
+United States,North America,Americas,1972,2.01,71.1561,209896021.0
+United States,North America,Americas,1973,1.879,71.3561,211908788.0
+United States,North America,Americas,1974,1.835,71.9561,213853928.0
+United States,North America,Americas,1975,1.774,72.60488,215973199.0
+United States,North America,Americas,1976,1.738,72.8561,218035164.0
+United States,North America,Americas,1977,1.79,73.2561,220239425.0
+United States,North America,Americas,1978,1.76,73.3561,222584545.0
+United States,North America,Americas,1979,1.808,73.80488,225055487.0
+United States,North America,Americas,1980,1.8395,73.60976,226544027.5
+United States,North America,Americas,1981,1.812,74.00976,229465744.0
+United States,North America,Americas,1982,1.8275,74.36098,231664432.0
+United States,North America,Americas,1983,1.799,74.46341,233792014.0
+United States,North America,Americas,1984,1.8065,74.56341,235824908.0
+United States,North America,Americas,1985,1.844,74.56341,237923734.0
+United States,North America,Americas,1986,1.8375,74.61463,240132831.0
+United States,North America,Americas,1987,1.872,74.76585,242288936.0
+United States,North America,Americas,1988,1.934,74.76585,244499004.0
+United States,North America,Americas,1989,2.014,75.01707,246819222.0
+United States,North America,Americas,1990,2.081,75.21463,249420883.5
+United States,North America,Americas,1991,2.0625,75.36585,253492503.0
+United States,North America,Americas,1992,2.046,75.61707,256894189.0
+United States,North America,Americas,1993,2.0195,75.41951,260255352.0
+United States,North America,Americas,1994,2.0015,75.61951,263435673.0
+United States,North America,Americas,1995,1.978,75.62195,266557091.0
+United States,North America,Americas,1996,1.976,76.02683,269667391.0
+United States,North America,Americas,1997,1.971,76.42927,272911760.0
+United States,North America,Americas,1998,1.999,76.58049,276115288.0
+United States,North America,Americas,1999,2.0075,76.58293,279294713.0
+United States,North America,Americas,2000,2.056,76.63659,281792158.5
+United States,North America,Americas,2001,2.0305,76.83659,284968955.0
+United States,North America,Americas,2002,2.0205,76.93659,287625193.0
+United States,North America,Americas,2003,2.0475,77.03659,290107933.0
+United States,North America,Americas,2004,2.0515,77.4878,292805298.0
+United States,North America,Americas,2005,2.057,77.4878,295516599.0
+United States,North America,Americas,2006,2.108,77.6878,298379912.0
+United States,North America,Americas,2007,2.12,77.9878,301231207.0
+United States,North America,Americas,2008,2.072,78.03902,304093966.0
+United States,North America,Americas,2009,2.002,78.39024,306771529.0
+United States,North America,Americas,2010,1.931,78.54146,309036340.5
+United States,North America,Americas,2011,1.8945,78.64146,311583040.5
+United States,North America,Americas,2012,1.8805,78.74146,313877662.0
+United States,North America,Americas,2013,1.8575,78.74146,316094393.0
+United States,North America,Americas,2014,1.8625,78.84146,318386329.0
+United States,North America,Americas,2015,1.8435,78.69024,320738994.0
+United States,North America,Americas,2016,1.8205,78.53902,323512322.0
+United States,North America,Americas,2017,1.7655,78.53902,325122128.0
+United States,North America,Americas,2018,1.7295,78.63902,326838199.0
+United States,North America,Americas,2019,1.706,78.7878,328329953.0
+United States,North America,Americas,2020,1.6415,76.98049,329484123.0
+United States,North America,Americas,2021,1.664,76.32927,331893745.0

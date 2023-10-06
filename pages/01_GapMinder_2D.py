@@ -1,6 +1,7 @@
 # Snowpark
 import streamlit as st
 import pandas as pd
+import os
 
 from helpers.other_helpers import set_page_config
 from helpers.data_helpers import eval_sql, variable_name_options
@@ -24,21 +25,19 @@ bubble_size_sel = c1.selectbox("Bubble Size", bubble_size_options)
 bubble_color_options = ["Continent", "Region", "Country"]
 bubble_color_sel = c2.selectbox("Bubble Color", bubble_color_options)
 
-# Get the data
 df_sql = eval_sql(f"""
     SELECT 
-        VARIABLE, VARIABLE_NAME, GEO_ID, date, year(date) as YEAR, VALUE, UNIT
+        VARIABLE, VARIABLE_NAME, GEO_ID, date, year(date) as YEAR, VALUE, UNIT 
     FROM 
-        TIMESERIES
-    WHERE
-        GEO_ID LIKE 'country%' AND VARIABLE_NAME in ('{x_axis_sel}', '{y_axis_sel}', '{bubble_size_sel}')
-    ORDER BY 
-        DATE asc
+        TIMESERIES 
+    WHERE 
+        GEO_ID LIKE 'country%' AND VARIABLE_NAME in ('{x_axis_sel}', '{y_axis_sel}', '{bubble_size_sel}') 
+    ORDER BY  
+        DATE asc 
 """)
 df_sql["ISO3"] = df_sql["GEO_ID"].str.split("/").str[1]                  
 df_country = pd.read_excel("data/country_codes.xlsx", dtype="str")
 df = df_sql.merge(df_country, how="inner", left_on="ISO3", right_on="ISO (3)")
-
 
 with st.expander("Show raw data"):
     st.write("Data has {} rows and {} columns".format(*df.shape))
@@ -68,8 +67,11 @@ year_list = sorted(list(years))
 
 # Now we have to pivot the table to have the variables as columns!
 df_data_aux = df_sel_avg[df_sel_avg['YEAR'].isin(year_list)]
-df_data = df_data_aux.pivot(index=['Country', 'Region', 'Continent', 'YEAR'], columns='VARIABLE_NAME', values='VALUE').reset_index()
-
+df_data_aux["YEAR"] = df_data_aux["YEAR"].astype(int)
+df_data_aux["VALUE"] = df_data_aux["VALUE"].astype(float)
+df_data = df_data_aux.pivot(index=['Country', 'Region', 'Continent', 'YEAR'], 
+                            columns='VARIABLE_NAME', 
+                            values='VALUE').reset_index()
 if len(year_list) <= 1:
     st.write("No common years between the selected countries")
 else:
@@ -81,7 +83,8 @@ else:
     xmax = df_data[x_axis_sel].max()*1.2
     ymax = df_data[y_axis_sel].max()*1.2
     smax = df_data[bubble_size_sel].max()*1.2
-    #if st.button("Create Animation"):
+    # Drop Nans
+    df_data = df_data.dropna()
     data, frame_list = gapminder_2d_config(df_data, year_list_sel, x_axis_sel, y_axis_sel, bubble_size_sel, bubble_color_sel, 
                                            xmax=xmax, ymax=ymax, smax=smax)
 
